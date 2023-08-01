@@ -4,7 +4,7 @@ INC					=	inc/
 CFLAGS				=	-Wall -Werror -Wextra -I $(INC)
 EXTRAFLAGS			=	-fsanitize=address -g3
 SRCS				=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
-SRCS_FILES			=	ft_isalpha.c ft_isdigit.c
+SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c
 SRCS_DIR			=	srcs/
 OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES			=	$(SRCS_FILES:%.c=%.o)

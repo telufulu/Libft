@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/01 20:43:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/01 21:15:10 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
+int	ft_isalnum(int c);
 
 #endif

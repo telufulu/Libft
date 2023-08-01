@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/01 20:51:01 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/01 21:16:39 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,22 @@ int	main(int argc, char **argv)
 				printf("FT_ISDIGIT \x1b[32mOK\x1b[0m\n");
 			else	
 				printf("FT_ISDIGIT \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_isalnum") || !strcmp(argv[1],"all"))
+		{
+			char	a = '9';
+			char	b = -1;
+			char	c = 90;
+			
+			printf("org: %i\n cpy: %i\n", isalnum(a), ft_isalnum(a));
+			printf("org: %i\n cpy: %i\n", isalnum(b), ft_isalnum(b));
+			printf("org: %i\n cpy: %i\n", isalnum(c), ft_isalnum(c));
+			if (isalnum(a) == ft_isalnum(a) &&
+				isalnum(b) == ft_isalnum(b) &&
+				isalnum(c) == ft_isalnum(c))
+				printf("FT_ISALNUM \x1b[32mOK\x1b[0m\n");
+			else	
+				printf("FT_ISALNUM \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
