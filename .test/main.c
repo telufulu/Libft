@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/01 23:06:01 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:53:16 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,9 @@ int	main(int argc, char **argv)
 		}
 	}
 	else
+	{
 		printf("\x1b[31merror: \x1b[0m empty argument\n");
+		return (-1);
+	}
 	return (0);
 }
