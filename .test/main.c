@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/06 17:20:09 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:56:32 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,6 +237,30 @@ int	main(int argc, char **argv)
 				printf("FT_TOLOWER \x1b[32mOK\x1b[0m\n");
 			else
 				printf("FT_TOLOWER \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_strchr") || !strcmp(argv[1],"all"))
+		{
+			char	*str = "Hola Mundo!";
+			int		c = 'x'; //try 'x' and '\0'
+
+			printf("org: %s\ncpy: %s\n", strchr(str, c), ft_strchr(str, c));
+			if (strchr(str, c) == ft_strchr(str, c) ||
+				!strcmp(strchr(str, c), ft_strchr(str, c)))
+				printf("FT_STRCHR \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_STRCHR \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_strrchr") || !strcmp(argv[1],"all"))
+		{
+			char	*str = "Hola Mundo!";
+			int		c = 'H'; //try 'x' and '\0'
+
+			printf("org: %s\ncpy: %s\n", strrchr(str, c), ft_strrchr(str, c));
+			if (strrchr(str, c) == ft_strrchr(str, c) ||
+				!strcmp(strrchr(str, c), ft_strrchr(str, c)))
+				printf("FT_STRRCHR \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_STRRCHR \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
