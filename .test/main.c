@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/06 16:24:13 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/06 17:20:09 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ int	main(int argc, char **argv)
 			char	s1a[] = "Always";
 			char	s2[] = "After all this time?\n";
 			char	s2a[] = "Always";
-			int		len = 8;
+			int		len = 10;
 
 			if (strlcpy(s1, s1a, len) == ft_strlcpy(s2, s2a, len) &&
 				!strcmp(s1, s2))
@@ -190,6 +190,53 @@ int	main(int argc, char **argv)
 			}
 			else	
 				printf("FT_STRLCPY \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_strlcat") || !strcmp(argv[1],"all"))
+		{
+			char	s1[50] = "After all this time?";
+			char	s1a[] = " Always\n";
+			char	s2[50] = "After all this time?";
+			char	s2a[] = " Always\n";
+			int		len = 28;
+
+			if (strlcat(s1, s1a, len) == ft_strlcat(s2, s2a, len) &&
+				!strcmp(s1, s2))
+			{
+				printf("org: %s\ncpy: %s\n", s1, s2);
+				printf("FT_STRLCAT \x1b[32mOK\x1b[0m\n");
+			}
+			else
+				printf("FT_STRLCAT \x1b[31mKO\x1b[0m\n");
+		}
+		int	a1 = 'd';
+		int	a2 = 'd';
+		int	b1 = '@';
+		int	b2 = '@';
+		if (!strcmp(argv[1], "ft_toupper") || !strcmp(argv[1],"all"))
+		{
+			a1 = toupper(a1);
+			a2 = ft_toupper(a2);
+			b1 = toupper(b1);
+			b2 = ft_toupper(b2);
+			printf("org: %c\ncpy: %c\n", a1, a2);
+			printf("org: %c\ncpy: %c\n", b1, b2);
+			if (a1 == a2 && b1 == b2)
+				printf("FT_TOUPPER \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_TOUPPER \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_tolower") || !strcmp(argv[1],"all"))
+		{
+			a1 = tolower(a1);
+			a2 = ft_tolower(a2);
+			b1 = tolower(b1);
+			b2 = ft_tolower(b2);
+			printf("org: %c\ncpy: %c\n", a1, a2);
+			printf("org: %c\ncpy: %c\n", b1, b2);
+			if (a1 == a2 && b1 == b2)
+				printf("FT_TOLOWER \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_TOLOWER \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
