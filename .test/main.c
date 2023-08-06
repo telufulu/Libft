@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/02 16:53:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/06 16:24:13 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,23 @@ int	main(int argc, char **argv)
 				printf("FT_MEMMOVE \x1b[32mOK\x1b[0m\n");
 			else	
 				printf("FT_MEMMOVE \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_strlcpy") || !strcmp(argv[1],"all"))
+		{
+			char	s1[] = "After all this time?\n";
+			char	s1a[] = "Always";
+			char	s2[] = "After all this time?\n";
+			char	s2a[] = "Always";
+			int		len = 8;
+
+			if (strlcpy(s1, s1a, len) == ft_strlcpy(s2, s2a, len) &&
+				!strcmp(s1, s2))
+			{
+				printf("org: %s\ncpy: %s\n", s1, s2);
+				printf("FT_STRLCPY \x1b[32mOK\x1b[0m\n");
+			}
+			else	
+				printf("FT_STRLCPY \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
