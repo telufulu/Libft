@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/09 20:52:58 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:30:39 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -299,6 +300,17 @@ int	main(int argc, char **argv)
 				printf("FT_STRNSTR \x1b[32mOK\x1b[0m\n");
 			else
 				printf("FT_STRNSTR \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_atoi") || !strcmp(argv[1],"all"))
+		{
+			// Try with -42, 0, +0, -0, 2147483647, -2147483648, +2147483648
+			char	*s1 = "\13\12\11\10\9 -214748364999asdas42";
+
+			printf("org: %i\ncpy: %i\n", atoi(s1), ft_atoi(s1));
+			if (atoi(s1) == ft_atoi(s1))
+				printf("FT_ATOI \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_ATOI \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
