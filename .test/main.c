@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/09 21:30:39 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/09 22:02:53 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,13 +304,49 @@ int	main(int argc, char **argv)
 		if (!strcmp(argv[1], "ft_atoi") || !strcmp(argv[1],"all"))
 		{
 			// Try with -42, 0, +0, -0, 2147483647, -2147483648, +2147483648
-			char	*s1 = "\13\12\11\10\9 -214748364999asdas42";
+			char	*s1 = "\13\12\11\10 -214748364999asdas42";
 
 			printf("org: %i\ncpy: %i\n", atoi(s1), ft_atoi(s1));
 			if (atoi(s1) == ft_atoi(s1))
 				printf("FT_ATOI \x1b[32mOK\x1b[0m\n");
 			else
 				printf("FT_ATOI \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_calloc") || !strcmp(argv[1],"all"))
+		{
+			char	*s1;
+			char	*s2;
+			int		i = 0;
+			int		len = 42;
+
+			s1 = calloc(sizeof(char), len);
+			while (s1 && i < len)
+				s1[i++] = '*';
+			i = 0;
+			s2 = ft_calloc(sizeof(char), len);
+			while (s2 && i < len)
+				s2[i++] = '*';
+			printf("org: %lu\ncpy: %lu\n", strlen(s1), strlen(s2));
+			if (strlen(s1) == strlen(s2))
+				printf("FT_CALLOC \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_CALLOC \x1b[31mKO\x1b[0m\n");
+			free(s1);
+			free(s2);
+		}
+		if (!strcmp(argv[1], "ft_strdup") || !strcmp(argv[1],"all"))
+		{
+			char	*org = "After all this time?\n\tAlways...";
+			char	*s1;
+			char	*s2;
+
+			s1 = strdup(org);
+			s2 = ft_strdup(org);
+			printf("org: %s\ncpy: %s\n", s1, s2);
+			if (!strcmp(s1, s2))
+				printf("FT_STRDUP \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_STRDUP \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
