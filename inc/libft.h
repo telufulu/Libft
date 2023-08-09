@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/08 18:19:44 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/08 18:37:33 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 typedef unsigned long	t_size;
 
+// Original functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -33,4 +34,5 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, t_size n);
 void	*ft_memchr(const void *s, int c, t_size n);
+char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
 #endif

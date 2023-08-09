@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/08 18:34:39 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:52:58 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,6 +286,19 @@ int	main(int argc, char **argv)
 				printf("FT_MEMCHR \x1b[32mOK\x1b[0m\n");
 			else
 				printf("FT_MEMCHR \x1b[31mKO\x1b[0m\n");
+		}
+		if (!strcmp(argv[1], "ft_strnstr") || !strcmp(argv[1],"all"))
+		{
+			char	*str = "Hola Mundo!";
+			char	*c = "!"; //try 'x' and '\0'
+			t_size	len = 10; //try 11 and 10 with c = "Mundo!"
+
+			printf("org: %s\ncpy: %s\n", strnstr(str, c, len), ft_strnstr(str, c, len));
+			if (strnstr(str, c, len) == ft_strnstr(str, c, len) ||
+				!strcmp(strnstr(str, c, len), ft_strnstr(str, c, len)))
+				printf("FT_STRNSTR \x1b[32mOK\x1b[0m\n");
+			else
+				printf("FT_STRNSTR \x1b[31mKO\x1b[0m\n");
 		}
 	}
 	else
