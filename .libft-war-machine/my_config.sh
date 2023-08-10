@@ -24,14 +24,14 @@ PATH_LIBFT="../"
 ##############
 # Edit with the name of your header's directory
 # Keep it empty if you have your header file in your main directory
-HEADER_DIR="../inc/"
+HEADER_DIR="inc/"
 
 ###########
 # SRC DIR #
 ###########
 # Edit with the name of your sources' directory
 # Keep it empty if you have your header file in your main directory
-SRC_DIR="../srcs/"
+SRC_DIR="srcs/"
 
 
 ###################################

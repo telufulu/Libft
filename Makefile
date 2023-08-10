@@ -16,14 +16,12 @@ OBJS_DIR			=	objs/
 
 all:	$(NAME)
 
-$(NAME): $(OBJS_DIR) $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	ar rcs $@ $^
 
-$(OBJS_DIR)%.o: $(SRCS_DIR)%.c | $(OBJS_DIR)
-	$(CC) -c $(CFLAGS) $< -o $@
-
-$(OBJS_DIR):
-		mkdir $(OBJS_DIR)
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	[ -d $(OBJS_DIR) ] || mkdir -p $(OBJS_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS_DIR)
@@ -35,5 +33,5 @@ fclean: clean
 
 re: fclean all
 
-.SILENT: all $(NAME) $(OBJS_DIR) $(OBJS) re clean fclean
+.SILENT: all $(NAME) $(OBJS) re clean fclean
 .PHONY: all $(NAME) bonus $(OBJS_DIR) clean fclean re 

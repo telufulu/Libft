@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/09 22:02:53 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/10 21:28:07 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -316,16 +316,10 @@ int	main(int argc, char **argv)
 		{
 			char	*s1;
 			char	*s2;
-			int		i = 0;
-			int		len = 42;
+			int		len = 30;
 
 			s1 = calloc(sizeof(char), len);
-			while (s1 && i < len)
-				s1[i++] = '*';
-			i = 0;
 			s2 = ft_calloc(sizeof(char), len);
-			while (s2 && i < len)
-				s2[i++] = '*';
 			printf("org: %lu\ncpy: %lu\n", strlen(s1), strlen(s2));
 			if (strlen(s1) == strlen(s2))
 				printf("FT_CALLOC \x1b[32mOK\x1b[0m\n");
