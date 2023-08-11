@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/10 21:57:11 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/11 21:49:03 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(t_size count, t_size size);
 char	*ft_strdup(const char *s1);
+int		ft_memcmp(const void *s1, const void *s2, t_size n);
 #endif
