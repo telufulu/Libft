@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/10 21:28:07 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/11 17:38:24 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,11 +145,11 @@ int	main(int argc, char **argv)
 		}
 		if (!strcmp(argv[1], "ft_memcpy") || !strcmp(argv[1],"all"))
 		{
-			char	s1[] = "After all this time?";
 			char	s1a[] = "Always";
-			char	s2[] = "After all this time?";
+			char	*s1 = s1a + 1;
 			char	s2a[] = "Always";
-			int		len = 1;
+			char	*s2 = s2a + 1;
+			int		len = 2;
 
 			memcpy(s1, s1a, len);
 			ft_memcpy(s2, s2a, len);
@@ -161,11 +161,11 @@ int	main(int argc, char **argv)
 		}
 		if (!strcmp(argv[1], "ft_memmove") || !strcmp(argv[1],"all"))
 		{
-			char	s1[] = "After all this time?\n";
 			char	s1a[] = "Always";
-			char	s2[] = "After all this time?\n";
+			char	*s1 = s1a + 1;
 			char	s2a[] = "Always";
-			int		len = 22;
+			char	*s2 = s2a + 1;
+			int		len = 2;
 
 			memmove(s1, s1a, len);
 			ft_memmove(s2, s2a, len);

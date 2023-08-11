@@ -6,7 +6,7 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:02:17 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:43:18 by jtoty            ###   ########.fr       */
+/*   Updated: 2023/08/10 21:52:23 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 3)
 	{
 		if (dest != ft_memmove(dest, src, 8))
-			write(1, "dest's adress was not returned\n", 31);
+		write(1, "dest's adress was not returned\n", 31);
 		write(1, dest, 22);
 	}
 	else if (arg == 4)
