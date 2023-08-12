@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 17:21:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/06 17:34:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:59:22 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_strchr(const char *s, int c)
 		if (*aux == (char)c)
 			return (aux);
 		aux++;
-		if (*aux == (char)c)
-			return (aux);
 	}
+	if (*aux == (char)c)
+		return (aux);
 	return (0);
 }

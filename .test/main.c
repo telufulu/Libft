@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 00:02:51 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:59:32 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,8 +241,8 @@ int	main(int argc, char **argv)
 		}
 		if (!strcmp(argv[1], "ft_strchr") || !strcmp(argv[1],"all"))
 		{
-			char	*str = "Hola Mundo!";
-			int		c = 'x'; //try 'x' and '\0'
+			char	*str = "\0"; //try "\0" "Hola Mundo!"
+			int		c = '\0'; //try 'x' and '\0'
 
 			printf("org: %s\ncpy: %s\n", strchr(str, c), ft_strchr(str, c));
 			if (strchr(str, c) == ft_strchr(str, c) ||
