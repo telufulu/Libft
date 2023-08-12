@@ -6,13 +6,13 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 22:40:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/11 21:33:07 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:16:35 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, t_size n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char	*s;
 	char	*d;

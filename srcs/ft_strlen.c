@@ -6,15 +6,15 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 21:28:52 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/06 16:47:25 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:15:30 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')

@@ -6,13 +6,13 @@
 /*   By: telufulu <telufulu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 03:15:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/06 16:48:24 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:16:49 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_strlcpy(char *dst, const char *src, t_size dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	int	i;
 

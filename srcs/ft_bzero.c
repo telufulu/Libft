@@ -6,13 +6,13 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 22:33:49 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/06 16:47:50 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:16:13 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, t_size n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*x;
 
