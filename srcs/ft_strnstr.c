@@ -6,13 +6,13 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:35:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 14:08:37 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:19:03 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, t_size len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*res;
 	char	*aux;
