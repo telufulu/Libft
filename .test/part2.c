@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   part2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 14:59:21 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:56:30 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	test_part1(char **argv);
-int	test_part2(char **argv);
-int	test_bonus(char **argv);
-
-int	main(int argc, char **argv)
+int	test_part2(char **argv)
 {
 	int	flag;
 
 	flag = 0;
-	if (argc == 2)
+	if (!strcmp(argv[1], "ft_substr") || !strcmp(argv[1],"all"))
 	{
-		flag += test_part1(argv);
-		flag += test_part2(argv);
-		flag += test_bonus(argv);
 		if (!flag)
-		{
-			printf("\x1b[31merror:\x1b[0m unknown argument\n");
-			return (-1);
-		}
+			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
+		flag = 1;
+		printf("FT_SUBSTR \x1b[32mOK\x1b[0m\n");
 	}
-	else
-	{
-		printf("\x1b[31merror:\x1b[0m empty argument\n");
-		return (-1);
-	}
-	return (0);
+	return (flag);
 }
