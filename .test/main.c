@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 13:59:32 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:02:54 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,7 +304,8 @@ int	main(int argc, char **argv)
 		{
 			char	*str = "Hola Mundo!";
 			char	*c = "!"; //try 'x' and '\0'
-			t_size	len = 10; //try 11 and 10 with c = "Mundo!"
+			t_size	len = 0; //try 11 and 10 with c = "Mundo!"
+							// try 0 with c = "!"
 
 			printf("org: %s\ncpy: %s\n", strnstr(str, c, len), ft_strnstr(str, c, len));
 			if (strnstr(str, c, len) == ft_strnstr(str, c, len) ||
