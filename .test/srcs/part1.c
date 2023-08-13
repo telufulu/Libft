@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 14:57:12 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/13 21:20:12 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,9 +172,9 @@ int	test_part1(char **argv)
 				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
 			flag = 1;
 			char	s1a[] = "Always";
-			char	*s1 = s1a + 1;
+			char	s1[50] = "Mundo";
 			char	s2a[] = "Always";
-			char	*s2 = s2a + 1;
+			char	s2[50] = "Mundo";
 			int		len = 2;
 
 			memcpy(s1, s1a, len);
@@ -191,9 +191,9 @@ int	test_part1(char **argv)
 				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
 			flag = 1;
 			char	s1a[] = "Always";
-			char	*s1 = s1a + 1;
+			char	s1[50] = "Mundo";
 			char	s2a[] = "Always";
-			char	*s2 = s2a + 1;
+			char	s2[50] = "Mundo";
 			int		len = 2;
 
 			memmove(s1, s1a, len);
