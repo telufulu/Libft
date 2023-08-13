@@ -6,12 +6,13 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/13 22:59:00 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/13 23:39:10 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -117,6 +118,24 @@ int	test_part2(char **argv)
 		}
 		if (i > 0)
 			printf("FT_SPLIT \x1b[32mOK\x1b[0m\n");
+		free(res);
+	}
+	if (!strcmp(argv[1], "ft_itoa") || !strcmp(argv[1],"all"))
+	{
+		if (!flag)
+			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
+		flag = 1;
+		
+		char	*res;
+		char	*expt_res = "-2147483648"; //-2147483648 2147483647 0 42 -42
+		int		num = -2147483648;
+
+		res = ft_itoa(num);
+		printf("%s\n", res);
+		if (!strcmp(res, expt_res))
+			printf("FT_ITOA \x1b[32mOK\x1b[0m\n");
+		else
+			printf("FT_ITOA \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	return (flag);
