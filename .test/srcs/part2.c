@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/17 19:49:28 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/17 20:10:42 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,13 +192,15 @@ int	test_part2(char **argv)
 		flag = 1;
 
 		int		fd;
-		char	c = 'a';
+		char	c = '*';
 		char	res[50];
-		char	expt_res[] = "42*\n";
+		char	expt_res[] = "*42*\n";
 
 		system("echo '042*' > srcs/test1.txt");
 		fd = open("srcs/test1.txt", O_RDWR);
 		ft_putchar_fd(c, fd);
+		close(fd);
+		fd = open("srcs/test1.txt", O_RDWR);
 		read(fd, res, 50);
 		printf("res: %s\n", res);
 		if (!strcmp(res, expt_res))
@@ -207,6 +209,31 @@ int	test_part2(char **argv)
 			printf("FT_PUTCHAR_FD \x1b[31mKO\x1b[0m\n");
 		close(fd);
 		system("rm srcs/test1.txt");
+	}
+	if (!strcmp(argv[1], "ft_putstr_fd") || !strcmp(argv[1],"all"))
+	{
+		if (!flag)
+			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
+		flag = 1;
+
+		int		fd;
+		char	s[] = "42";
+		char	*expt_res = "42ways\n";
+		char	res[50];
+
+		system("echo 'Always' > srcs/test2.txt");
+		fd = open("srcs/test2.txt", O_RDWR);
+		ft_putstr_fd(s, fd);
+		close(fd);
+		fd = open("srcs/test2.txt", O_RDWR);
+		read(fd, res, 50);
+		printf("res: %s\n", res);
+		if (!strcmp(res, expt_res))
+			printf("FT_PUTSTR_FD \x1b[32mOK\x1b[0m\n");
+		else
+			printf("FT_PUTSTR_FD \x1b[31mKO\x1b[0m\n");
+		close(fd);
+		system("rm srcs/test2.txt");
 	}
 	return (flag);
 }
