@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/13 23:39:10 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/17 18:39:01 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+char	auxiliar(unsigned int n, char c)
+{
+	if (n >= 0)
+		c = '*';
+	return (c);
+}
 
 int	test_part2(char **argv)
 {
@@ -136,6 +143,24 @@ int	test_part2(char **argv)
 			printf("FT_ITOA \x1b[32mOK\x1b[0m\n");
 		else
 			printf("FT_ITOA \x1b[31mKO\x1b[0m\n");
+		free(res);
+	}
+	if (!strcmp(argv[1], "ft_strmapi") || !strcmp(argv[1],"all"))
+	{
+		if (!flag)
+			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
+		flag = 1;
+
+		char	*res;
+		char	src[] = "HOLA MUNDO";
+		char	expt_res[] = "**********";
+
+		res = ft_strmapi(src, &auxiliar);
+		printf("res: %s\n", res);
+		if (!strcmp(res, expt_res))
+			printf("FT_STRMAPI \x1b[32mOK\x1b[0m\n");
+		else
+			printf("FT_STRMAPI \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	return (flag);
