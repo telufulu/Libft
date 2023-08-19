@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:19:17 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 14:17:22 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/19 15:39:22 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*aux;
+	unsigned char	*aux;
 
-	aux = (char *)s;
-	while (*aux && n--)
+	aux = (unsigned char *)s;
+	while (n-- > 0)
 	{
-		if (*aux == (char)c)
+		if (*aux == (unsigned char)c)
 			return ((void *)aux);
 		aux++;
 	}
-	return (0);
+	return (NULL);
 }
