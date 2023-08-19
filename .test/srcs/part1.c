@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/13 21:20:12 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/19 15:05:45 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -361,10 +361,10 @@ int	test_part1(char **argv)
 			if (!flag)
 				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
 			flag = 1;
-			char	*str = "Hola Mundo!";
-			char	*c = "!"; //try 'x' and '\0'
-			size_t	len = 0; //try 11 and 10 with c = "Mundo!"
-							// try 0 with c = "!"
+			char	*str = "aaabcabcd"; // Hola Mundo! aaabcabcd
+			char	*c = "abcd"; //try 'x', '!', "aabc"  and '\0'
+			size_t	len = -1; //try 11 and 10 with c = "Mundo!"
+							// try 0 or -1 with c = "!"
 
 			printf("org: %s\ncpy: %s\n", strnstr(str, c, len), ft_strnstr(str, c, len));
 			if (strnstr(str, c, len) == ft_strnstr(str, c, len) ||

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:35:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 14:19:03 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/19 15:06:31 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,15 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*res;
-	char	*aux;
+	size_t	len2;
 
 	if (*needle == '\0')
 		return ((char *)haystack);
-	while (*haystack != '\0' && len)
+	len2 = ft_strlen(needle);
+	while (*haystack != '\0' && len >= len2)
 	{
-		aux = (char *)needle;
-		res = (char *)haystack;
-		while (*haystack == *aux && len--)
-		{
-			if (*haystack == '\0' && *aux != '\0')
-				return (0);
-			haystack++;
-			aux++;
-		}
-		if (*aux == '\0')
-			return (res);
+		if (!ft_strncmp(haystack, needle, len2))
+			return ((char *)haystack);
 		haystack++;
 		len--;
 	}
