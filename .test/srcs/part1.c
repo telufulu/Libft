@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/19 15:40:03 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/19 16:06:13 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,9 +177,8 @@ int	test_part1(char **argv)
 			char	s2[50] = "Mundo";
 			int		len = 2;
 
-			memcpy(s1, s1a, len);
-			ft_memcpy(s2, s2a, len);
-			printf("org: %s\ncpy: %s\n", s1, s2);
+			printf("org: %s\n", (char *)memcpy(s1, s1a, len));
+			printf("cpy: %s\n", (char *)ft_memcpy(s2, s2a, len));
 			if (!strcmp(s1, s2))
 				printf("FT_MEMCPY \x1b[32mOK\x1b[0m\n");
 			else	
@@ -190,15 +189,14 @@ int	test_part1(char **argv)
 			if (!flag)
 				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
 			flag = 1;
-			char	s1a[] = "Always";
+			char	*s1a = NULL;
 			char	s1[50] = "Mundo";
-			char	s2a[] = "Always";
+			char	*s2a = NULL;
 			char	s2[50] = "Mundo";
 			int		len = 2;
 
-			memmove(s1, s1a, len);
-			ft_memmove(s2, s2a, len);
-			printf("org: %s\ncpy: %s\n", s1, s2);
+			printf("org: %s\n", (char *)memmove(s1, s1a, len));
+			printf("cpy: %s\n", (char *)ft_memmove(s2, s2a, len));
 			if (!strcmp(s1, s2) && !strcmp(s1a, s2a))
 				printf("FT_MEMMOVE \x1b[32mOK\x1b[0m\n");
 			else	
