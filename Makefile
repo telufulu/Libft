@@ -2,8 +2,7 @@ NAME				=	libft.a
 CC					=	cc
 INC					=	.
 CFLAGS				=	-Wall -Werror -Wextra -I $(INC)
-SRCS				=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
-SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+SRCS				=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
 						ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
 						ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
@@ -12,22 +11,18 @@ SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 						ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 						ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRCS_DIR			=	srcs/
-OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
-OBJS_FILES			=	$(SRCS_FILES:%.c=%.o)
-OBJS_DIR			=	objs/
+OBJS				=	$(SRCS:%.c=%.o)
 
 all:	$(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
-	[ -d $(OBJS_DIR) ] || mkdir -p $(OBJS_DIR)
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_DIR)
+	rm -rf $(OBJS)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
 
@@ -37,4 +32,4 @@ fclean: clean
 re: fclean all
 
 .SILENT: all $(NAME) $(OBJS) re clean fclean
-.PHONY: all $(NAME) bonus $(OBJS_DIR) clean fclean re 
+.PHONY: all $(NAME) bonus clean fclean re 
