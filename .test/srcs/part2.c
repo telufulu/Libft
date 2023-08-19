@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/17 21:05:45 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/19 16:34:30 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,9 @@ int	test_part2(char **argv)
 		//char	s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
 		//char	s[] = "Hola Mundo Que Tal Estás ?";
 		//char	s[] = "               ";
-		char	s[] = "hello!";
-		char	c = ' ';
-		char	*expt_res[] = {"hello!", NULL};
+		char	s[] = "--1-2--3---4----5-----42";
+		char	c = '-';
+		char	*expt_res[] = {"1", "2", "3", "4", "5", "42", NULL};
 		//char	*expt_res[] = {NULL};
 		//char	*expt_res[] = {"lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.", "Sed", "non", "risus.", "Suspendisse"};
 		//char	*expt_res[] = {"Hola", "Mundo","Que","Tal","Estás", "?"};

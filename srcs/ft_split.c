@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/13 23:09:07 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/19 16:40:13 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,9 @@ static size_t	next_word(char const **s, char c)
 	i = 0;
 	while (**s == c)
 		(*s)++;
-	while (s[0][i] != c)
+	while (s[0][i] != c && s[0][i] != '\0')
 		i++;
 	return (i);
-}
-
-static void	*ft_free(char **res, int i)
-{
-	while (res[i])
-		free(res[i--]);
-	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -68,8 +61,6 @@ char	**ft_split(char const *s, char c)
 	{
 		len_word = next_word(&s, c);
 		res[i] = ft_calloc(sizeof(char), len_word + 1);
-		if (!res[i])
-			return (ft_free(res, i));
 		ft_strlcpy(res[i++], s, len_word + 1);
 		s += len_word;
 	}
