@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus.c                                            :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/12 15:00:19 by telufulu         ###   ########.fr       */
+/*   Created: 2023/08/19 17:05:48 by telufulu          #+#    #+#             */
+/*   Updated: 2023/08/20 15:03:32 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft_bonus.h"
 
-int	test_bonus(char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	int	flag;
+	t_list	*res;
 
-	flag = 0;
-	//if (!strcmp(argv[1], "HOLITA") || !strcmp(argv[1],"all"))
-	if (!strcmp(argv[1], "HOLITA"))
-	{
-		if (!flag)
-			printf("\x1b[36m-----------Bonus-----------\x1b[0m\n");
-		flag = 1;
-	}
-	return (flag);
+	res = ft_calloc(sizeof(t_list), 1);
+	res->content = ft_strdup(content);
+	res->next = NULL;
+	return (res);
 }
