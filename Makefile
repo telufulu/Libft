@@ -12,7 +12,7 @@ SRCS				=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 						ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS				=	$(SRCS:%.c=%.o)
-SRCS_BONUS			=	ft_lstnew_bonus.c
+SRCS_BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c
 OBJS_BONUS			=	$(SRCS_BONUS:%.c=%.o)
 
 all:	$(NAME)
@@ -37,5 +37,5 @@ fclean: clean
 
 re: fclean all
 
-#.SILENT: all $(NAME) $(OBJS) bonus re clean fclean
-.PHONY: all $(NAME) bonus clean fclean re 
+.SILENT: all $(NAME) $(OBJS) $(OBJS_BONUS) bonus re clean fclean
+.PHONY: all bonus clean fclean re 

@@ -6,12 +6,11 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/19 17:18:04 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/20 17:07:02 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "libft_bonus.h"
 #include <stdio.h>
 #include <string.h>
 
