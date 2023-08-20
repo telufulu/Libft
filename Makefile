@@ -11,24 +11,29 @@ SRCS				=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 						ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 						ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-OBJS				=	$(SRCS:%.c=%.o)
+OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
+OBJS_FILES			=	$(SRCS:%.c=%.o)
 SRCS_BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c
-OBJS_BONUS			=	$(SRCS_BONUS:%.c=%.o)
+OBJS_BONUS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES_BONUS))
+OBJS_FILES_BONUS	=	$(SRCS_BONUS:%.c=%.o)
+OBJS_DIR			=	objs/
 
 all:	$(NAME)
 
-bonus:	$(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
-
-$(NAME): $(OBJS)
+$(NAME): $(OBJS_DIR) $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
+bonus:	$(NAME) $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS_BONUS)
+
+$(OBJS_DIR):
+	if [ ! -d $(OBJS_DIR) ]; then mkdir -p $(OBJS_DIR); fi
+
+$(OBJS_DIR)%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
-	rm -f $(OBJS_BONUS)
+	rm -r $(OBJS_DIR)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
 
@@ -37,5 +42,5 @@ fclean: clean
 
 re: fclean all
 
-.SILENT: all $(NAME) $(OBJS) $(OBJS_BONUS) bonus re clean fclean
-.PHONY: all bonus clean fclean re 
+#.SILENT: all $(NAME) $(OBJS) $(OBJS_BONUS) bonus re clean fclean
+.PHONY: all clean fclean re 

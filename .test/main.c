@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 17:07:02 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/20 21:54:50 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ int	main(int argc, char **argv)
 			printf("\x1b[31merror:\x1b[0m unknown argument\n");
 			return (-1);
 		}
+		else if (flag == 3)
+			printf("%5c LIBFT \x1b[32m SUCCES🎉\x1b[0m %c\n", '-', '-');
+		else
+			printf("%5c LIBFT \x1b[31m FAIL 😨\x1b[0m %c\n", '-', '-');
 	}
 	else
 	{

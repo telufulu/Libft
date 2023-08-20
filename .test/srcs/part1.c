@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/19 17:29:00 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/20 21:53:22 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int	test_part1(int argc, char **argv)
 		if (!strcmp(argv[argc - 1], "ft_isalpha") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	a = 'A';
 			char	b = 'z';
 			char	c = -90;
@@ -36,13 +38,15 @@ int	test_part1(int argc, char **argv)
 				isalpha(c) == ft_isalpha(c))
 				printf("FT_ISALPHA \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_ISALPHA \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_ISALPHA \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_isdigit") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	a = '9';
 			char	b = -1;
 			char	c = 90;
@@ -55,13 +59,15 @@ int	test_part1(int argc, char **argv)
 				isdigit(c) == ft_isdigit(c))
 				printf("FT_ISDIGIT \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_ISDIGIT \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_ISDIGIT \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_isalnum") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	a = '9';
 			char	b = -1;
 			char	c = 90;
@@ -74,13 +80,15 @@ int	test_part1(int argc, char **argv)
 				isalnum(c) == ft_isalnum(c))
 				printf("FT_ISALNUM \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_ISALNUM \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_ISALNUM \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_isascii") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	a = '9';
 			char	b = -1;
 			char	c = 127;
@@ -93,13 +101,15 @@ int	test_part1(int argc, char **argv)
 				isascii(c) == ft_isascii(c))
 				printf("FT_ISASCII \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_ISALNUM \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_ISALNUM \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_isprint") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	a = '9';
 			char	b = -1;
 			char	c = 127;
@@ -112,13 +122,15 @@ int	test_part1(int argc, char **argv)
 				isprint(c) == ft_isprint(c))
 				printf("FT_ISPRINT \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_ISPRINT \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_ISPRINT \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strlen") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*s1 = "Hola Mundo!\n";
 			char	*s2 = "";
 			char	*s3 = "After all this time?";
@@ -131,13 +143,15 @@ int	test_part1(int argc, char **argv)
 				strlen(s3) == ft_strlen(s3))
 				printf("FT_STRLEN \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_STRLEN \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRLEN \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_memset") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1[] = "After all this time?\n";
 			char	s2[] = "After all this time?\n";
 			char	c = -42;
@@ -147,13 +161,15 @@ int	test_part1(int argc, char **argv)
 			if (!strcmp(s1, s2))
 				printf("FT_MEMSET \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_MEMSET \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_MEMSET \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_bzero") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1[] = "After all this time?\n";
 			char	s2[] = "After all this time?\n";
 			int		len = 22;
@@ -164,13 +180,15 @@ int	test_part1(int argc, char **argv)
 			if (!strcmp(s1, s2))
 				printf("FT_BZERO \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_BZERO \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_BZERO \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_memcpy") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1a[] = "Always";
 			char	s1[50] = "Mundo";
 			char	s2a[] = "Always";
@@ -182,13 +200,15 @@ int	test_part1(int argc, char **argv)
 			if (!strcmp(s1, s2))
 				printf("FT_MEMCPY \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_MEMCPY \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_MEMCPY \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_memmove") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*s1a = "Always";
 			char	s1[50] = "Mundo";
 			char	*s2a = "Always";
@@ -200,13 +220,15 @@ int	test_part1(int argc, char **argv)
 			if (!strcmp(s1, s2) && !strcmp(s1a, s2a))
 				printf("FT_MEMMOVE \x1b[32mOK\x1b[0m\n");
 			else	
-				printf("FT_MEMMOVE \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_MEMMOVE \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strlcpy") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1[] = "After all this time?\n";
 			char	s1a[] = "Always";
 			char	s2[] = "After all this time?\n";
@@ -220,13 +242,15 @@ int	test_part1(int argc, char **argv)
 				printf("FT_STRLCPY \x1b[32mOK\x1b[0m\n");
 			}
 			else	
-				printf("FT_STRLCPY \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRLCPY \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strlcat") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1[50] = "After all this time?";
 			char	s1a[] = " Always\n";
 			char	s2[50] = "After all this time?";
@@ -240,7 +264,7 @@ int	test_part1(int argc, char **argv)
 				printf("FT_STRLCAT \x1b[32mOK\x1b[0m\n");
 			}
 			else
-				printf("FT_STRLCAT \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRLCAT \x1b[31mKO\x1b[0m\n");
 		}
 		int	a1 = 'd';
 		int	a2 = 'd';
@@ -249,8 +273,10 @@ int	test_part1(int argc, char **argv)
 		if (!strcmp(argv[argc - 1], "ft_toupper") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			a1 = toupper(a1);
 			a2 = ft_toupper(a2);
 			b1 = toupper(b1);
@@ -260,13 +286,15 @@ int	test_part1(int argc, char **argv)
 			if (a1 == a2 && b1 == b2)
 				printf("FT_TOUPPER \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_TOUPPER \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_TOUPPER \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_tolower") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			a1 = tolower(a1);
 			a2 = ft_tolower(a2);
 			b1 = tolower(b1);
@@ -276,13 +304,15 @@ int	test_part1(int argc, char **argv)
 			if (a1 == a2 && b1 == b2)
 				printf("FT_TOLOWER \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_TOLOWER \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_TOLOWER \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strchr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*str = "\0"; //try "\0" "Hola Mundo!"
 			int		c = '\0'; //try 'x' and '\0'
 
@@ -291,13 +321,15 @@ int	test_part1(int argc, char **argv)
 				!strcmp(strchr(str, c), ft_strchr(str, c)))
 				printf("FT_STRCHR \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_STRCHR \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRCHR \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strrchr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*str = "Hola Mundo!";
 			int		c = 'H'; //try 'x' and '\0'
 
@@ -306,13 +338,15 @@ int	test_part1(int argc, char **argv)
 				!strcmp(strrchr(str, c), ft_strrchr(str, c)))
 				printf("FT_STRRCHR \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_STRRCHR \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRRCHR \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strncmp") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1[] = "Hola mundo! ";
 			char	s2[] = "Hola mundo!";
 			size_t	len = 10;
@@ -321,13 +355,15 @@ int	test_part1(int argc, char **argv)
 			if (strncmp(s1, s2, len) == ft_strncmp(s1, s2, len))
 				printf("FT_STRNCMP \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_STRNCMP \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRNCMP \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_memchr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			void	*str = "Hola Mundo!\0iaoiashdfioahsgd\2holita";
 			int		c = 2; //try 'x' and '\0'
 			size_t	len = 100; //try 10 with '!' | '\0' with 0
@@ -337,13 +373,15 @@ int	test_part1(int argc, char **argv)
 				!strcmp(memchr(str, c, len), ft_memchr(str, c, len)))
 				printf("FT_MEMCHR \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_MEMCHR \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_MEMCHR \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_memcmp") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	s1[] = "Hola mundo! ";
 			char	s2[] = "Hola mundo!";
 			size_t	len = 0;
@@ -352,13 +390,15 @@ int	test_part1(int argc, char **argv)
 			if (memcmp(s1, s2, len) == ft_memcmp(s1, s2, len))
 				printf("FT_MEMCMP \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_MEMCMP \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_MEMCMP \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_strnstr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*str = "aaabcabcd"; // Hola Mundo! aaabcabcd
 			char	*c = "abcd"; //try 'x', '!', "aabc"  and '\0'
 			size_t	len = -1; //try 11 and 10 with c = "Mundo!"
@@ -369,13 +409,15 @@ int	test_part1(int argc, char **argv)
 				!strcmp(strnstr(str, c, len), ft_strnstr(str, c, len)))
 				printf("FT_STRNSTR \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_STRNSTR \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRNSTR \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_atoi") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			// Try with -42, 0, +0, -0, 2147483647, -2147483648, +2147483648
 			char	*s1 = "\13\12\11\10 -214748364999asdas42";
 
@@ -383,13 +425,15 @@ int	test_part1(int argc, char **argv)
 			if (atoi(s1) == ft_atoi(s1))
 				printf("FT_ATOI \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_ATOI \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_ATOI \x1b[31mKO\x1b[0m\n");
 		}
 		if (!strcmp(argv[argc - 1], "ft_calloc") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*s1;
 			char	*s2;
 			int		len = 30;
@@ -400,15 +444,17 @@ int	test_part1(int argc, char **argv)
 			if (strlen(s1) == strlen(s2))
 				printf("FT_CALLOC \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_CALLOC \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_CALLOC \x1b[31mKO\x1b[0m\n");
 			free(s1);
 			free(s2);
 		}
 		if (!strcmp(argv[argc - 1], "ft_strdup") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part1"))
 		{
 			if (!flag)
-				printf("\x1b[36m----------Part 1----------\x1b[0m\n");
-			flag = 1;
+			{
+				printf("\x1b[36m-------------Part 1-------------\x1b[0m\n");
+				flag = 1;
+			}
 			char	*org = "After all this time?\n\tAlways...";
 			char	*s1;
 			char	*s2;
@@ -419,7 +465,7 @@ int	test_part1(int argc, char **argv)
 			if (!strcmp(s1, s2))
 				printf("FT_STRDUP \x1b[32mOK\x1b[0m\n");
 			else
-				printf("FT_STRDUP \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_STRDUP \x1b[31mKO\x1b[0m\n");
 			free(s1);
 			free(s2);
 		}

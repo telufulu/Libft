@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/19 17:41:13 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/20 21:50:05 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	auxiliar(unsigned int n, char c)
 
 void	auxiliar2(unsigned int n, char *c)
 {
-	c[n] =ft_toupper(c[n]);
+	c[n] = ft_toupper(c[n]);
 }
 
 int	test_part2(int argc, char **argv)
@@ -37,8 +37,10 @@ int	test_part2(int argc, char **argv)
 	if (!strcmp(argv[argc - 1], "ft_substr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		// Sólo debe fallar en caso de que s = 0
 		char	*res = 0;
@@ -52,14 +54,16 @@ int	test_part2(int argc, char **argv)
 		if ((res == NULL && expected_res == NULL) || !strcmp(res, expected_res))
 			printf("FT_SUBSTR \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_SUBSTR \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_SUBSTR \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	if (!strcmp(argv[argc - 1], "ft_strjoin") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		//char	s1[] = "After all this time?";
 		//char	s2[] = " Always";
@@ -74,14 +78,16 @@ int	test_part2(int argc, char **argv)
 		if ((res == NULL && expt_res == NULL) || !strcmp(res, expt_res))
 			printf("FT_STRJOIN \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_STRJOIN \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_STRJOIN \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	if (!strcmp(argv[argc - 1], "ft_strtrim") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 		
 		char	s1[] = "*****Hola? Good job! Mundo   ";
 		char	set[] = "* Hola Mundo?";
@@ -96,14 +102,16 @@ int	test_part2(int argc, char **argv)
 		if ((res == NULL && expt_res == NULL) || !strcmp(res, expt_res))
 			printf("FT_STRTRIM \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_STRTRIM \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_STRTRIM \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	if (!strcmp(argv[argc - 1], "ft_split") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		int		i = 0;
 		char	**res;
@@ -123,7 +131,7 @@ int	test_part2(int argc, char **argv)
 			printf("%s\n", res[i]);
 			if (strcmp(res[i], expt_res[i]))
 			{
-				printf("FT_SPLIT \x1b[31mKO\x1b[0m\n");
+				flag += printf("FT_SPLIT \x1b[31mKO\x1b[0m\n");
 				i = 0;
 				break ;
 			}
@@ -136,8 +144,10 @@ int	test_part2(int argc, char **argv)
 	if (!strcmp(argv[argc - 1], "ft_itoa") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 		
 		char	*res;
 		char	*expt_res = "-2147483648"; //-2147483648 2147483647 0 42 -42
@@ -148,14 +158,16 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(res, expt_res))
 			printf("FT_ITOA \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_ITOA \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_ITOA \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	if (!strcmp(argv[argc - 1], "ft_strmapi") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		char	*res;
 		char	src[] = "HOLA MUNDO";
@@ -166,14 +178,16 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(res, expt_res))
 			printf("FT_STRMAPI \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_STRMAPI \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_STRMAPI \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	if (!strcmp(argv[argc - 1], "ft_striteri") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		char	src[] = "hola mundo";
 		char	expt_res[] = "HoLa mUnDo";
@@ -183,13 +197,15 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(src, expt_res))
 			printf("FT_STRITERI \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_STRITERI \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_STRITERI \x1b[31mKO\x1b[0m\n");
 	}
 	if (!strcmp(argv[argc - 1], "ft_putchar_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		int		fd;
 		char	c = '*';
@@ -206,15 +222,17 @@ int	test_part2(int argc, char **argv)
 		if (*res ==  *expt_res)
 			printf("FT_PUTCHAR_FD \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_PUTCHAR_FD \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_PUTCHAR_FD \x1b[31mKO\x1b[0m\n");
 		close(fd);
 		system("rm srcs/test1.txt");
 	}
 	if (!strcmp(argv[argc - 1], "ft_putstr_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		int		fd;
 		char	s[] = "42ways";
@@ -231,15 +249,17 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(res, expt_res))
 			printf("FT_PUTSTR_FD \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_PUTSTR_FD \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_PUTSTR_FD \x1b[31mKO\x1b[0m\n");
 		close(fd);
 		system("rm srcs/test2.txt");
 	}
 	if (!strcmp(argv[argc - 1], "ft_putendl_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		int		fd;
 		char	s[] = "42ways";
@@ -256,15 +276,17 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(res, expt_res))
 			printf("FT_PUTENDL_FD \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_PUTENDL_FD \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_PUTENDL_FD \x1b[31mKO\x1b[0m\n");
 		close(fd);
 		system("rm srcs/test3.txt");
 	}
 	if (!strcmp(argv[argc - 1], "ft_putnbr_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
-			printf("\x1b[36m----------Part 2----------\x1b[0m\n");
-		flag = 1;
+		{
+			printf("\x1b[36m-------------Part 2-------------\x1b[0m\n");
+			flag = 1;
+		}
 
 		int		fd;
 		int		num = 0;
@@ -281,7 +303,7 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(res, expt_res))
 			printf("FT_PUTENDL_FD \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_PUTENDL_FD \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_PUTENDL_FD \x1b[31mKO\x1b[0m\n");
 		close(fd);
 		system("rm srcs/test3.txt");
 	}

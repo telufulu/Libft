@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 20:39:11 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/20 21:44:23 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	test_bonus(int argc, char **argv)
 	if (!strcmp(argv[argc - 1], "ft_lstnew") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
 	{
 		if (!flag)
-			printf("\x1b[36m-----------Bonus-----------\x1b[0m\n");
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
 		flag = 1;
 
 		t_list	*res;
@@ -36,13 +36,13 @@ int	test_bonus(int argc, char **argv)
 		else if (!strcmp((char *)res->content, content) && res->next == 0)
 			printf("FT_LSTNEW \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_LSTNEW \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_LSTNEW \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
 	if (!strcmp(argv[argc - 1], "ft_lstadd_front") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
 	{
 		if (!flag)
-			printf("\x1b[36m-----------Bonus-----------\x1b[0m\n");
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
 		flag = 1;
 
 		t_list	*res;
@@ -57,7 +57,7 @@ int	test_bonus(int argc, char **argv)
 		if (!strcmp(res->content, content2) && !strcmp((res->next)->content, content))
 			printf("FT_LSTADD_FRONT \x1b[32mOK\x1b[0m\n");
 		else
-			printf("FT_LSTADD_FRONT \x1b[31mKO\x1b[0m\n");
+			flag += printf("FT_LSTADD_FRONT \x1b[31mKO\x1b[0m\n");
 		free(res->next);
 		free(res);
 	}
