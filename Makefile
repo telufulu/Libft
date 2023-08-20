@@ -14,7 +14,7 @@ SRCS				=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES			=	$(SRCS:%.c=%.o)
 SRCS_BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
-						ft_lstsize_bonus.c
+						ft_lstsize_bonus.c ft_lstlast_bonus.c
 OBJS_BONUS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES_BONUS))
 OBJS_FILES_BONUS	=	$(SRCS_BONUS:%.c=%.o)
 OBJS_DIR			=	objs/
@@ -43,5 +43,5 @@ fclean: clean
 
 re: fclean all
 
-#.SILENT: all $(NAME) $(OBJS) $(OBJS_BONUS) bonus re clean fclean
+.SILENT: all $(NAME) $(OBJS) $(OBJS_BONUS) bonus re clean fclean
 .PHONY: all clean fclean re 

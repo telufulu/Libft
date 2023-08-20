@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 22:15:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/20 22:23:27 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,23 @@ int	test_bonus(int argc, char **argv)
 			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
 			flag = 1;
 		}
+		
+		t_list	*res;
+		t_list	*aux;
+		t_list	*aux2;
+		char	*content = "Always";
+		char	*content2 = "After all this time?";
+
+		res = ft_lstnew(content);
+		aux = ft_lstnew(content2);
+		ft_lstadd_front(&res, aux);
+		aux2 = ft_lstlast(res); // try with 0 instead res
+		if (!strcmp(aux2->content, content) && !aux2->next)
+			printf("FT_LSTLAST \x1b[32mOK\x1b[0m\n");
+		else
+			flag += printf("FT_LSTLAST \x1b[31mKO\x1b[0m\n");
+		free(res->next);
+		free(res);
 	}
 	return (flag);
 }
