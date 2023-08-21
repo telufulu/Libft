@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/21 13:30:51 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/21 16:45:46 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,6 +162,28 @@ int	test_bonus(int argc, char **argv)
 			printf("FT_LSTDELONE \x1b[32mOK\x1b[0m\n");
 		else
 			flag += printf("FT_LSTDELONE \x1b[31mKO\x1b[0m\n");
+	}
+	if (!strcmp(argv[argc - 1], "ft_lstclear") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	{
+		if (!flag)
+		{
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
+			flag = 1;
+		}
+		
+		t_list	*res;
+		t_list	*aux;
+		char	content[] = "After all this time?";
+		char	content2[] = "Always";
+
+		res = ft_lstnew(content);
+		aux = ft_lstnew(content2);
+		ft_lstadd_back(&res, aux);
+		ft_lstclear(&res, &zero_auxiliar);
+		if (aux->content)
+			printf("FT_LSTCLEAR \x1b[32mOK\x1b[0m\n");
+		else
+			flag += printf("FT_LSTCLEAR \x1b[31mKO\x1b[0m\n");
 	}
 	return (flag);
 }
