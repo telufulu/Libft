@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 22:23:27 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/21 13:30:51 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+static void	zero_auxiliar(void *s)
+{
+	char	*aux;
+
+	aux = s;
+	while (*aux != '\0')
+		*aux++ = 0;
+}
 
 int	test_bonus(int argc, char **argv)
 {
@@ -112,6 +121,47 @@ int	test_bonus(int argc, char **argv)
 			flag += printf("FT_LSTLAST \x1b[31mKO\x1b[0m\n");
 		free(res->next);
 		free(res);
+	}
+	if (!strcmp(argv[argc - 1], "ft_lstadd_back") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	{
+		if (!flag)
+		{
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
+			flag = 1;
+		}
+		
+		t_list	*res;
+		t_list	*aux;
+		char	*content = "After all this time?";
+		char	*content2 = "Always";
+
+		res = ft_lstnew(content);
+		aux = ft_lstnew(content2);
+		ft_lstadd_back(&res, aux);
+		if (!strcmp(res->content, content) && !strcmp((res->next)->content, content2) && !aux->next)
+			printf("FT_LSTADD_BACK \x1b[32mOK\x1b[0m\n");
+		else
+			flag += printf("FT_LSTADD_BACK \x1b[31mKO\x1b[0m\n");
+		free(res->next);
+		free(res);
+	}
+	if (!strcmp(argv[argc - 1], "ft_lstdelone") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	{
+		if (!flag)
+		{
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
+			flag = 1;
+		}
+		
+		t_list	*res;
+		char	content[] = "After all this time?";
+
+		res = ft_lstnew(content);
+		ft_lstdelone(res, &zero_auxiliar);
+		if (res->content)
+			printf("FT_LSTDELONE \x1b[32mOK\x1b[0m\n");
+		else
+			flag += printf("FT_LSTDELONE \x1b[31mKO\x1b[0m\n");
 	}
 	return (flag);
 }
