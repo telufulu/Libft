@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/21 17:42:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/27 15:19:47 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	test_bonus(int argc, char **argv)
 	int	flag;
 
 	flag = 0;
-	if (!strcmp(argv[argc - 1], "ft_lstnew") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstnew") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -74,7 +74,7 @@ int	test_bonus(int argc, char **argv)
 			flag += printf("FT_LSTNEW \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstadd_front") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstadd_front") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -97,7 +97,7 @@ int	test_bonus(int argc, char **argv)
 		free(res->next);
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstsize") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstsize") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -122,7 +122,7 @@ int	test_bonus(int argc, char **argv)
 		free(res->next);
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstlast") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstlast") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -147,7 +147,7 @@ int	test_bonus(int argc, char **argv)
 		free(res->next);
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstadd_back") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstadd_back") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -170,7 +170,7 @@ int	test_bonus(int argc, char **argv)
 		free(res->next);
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstdelone") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstdelone") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -188,7 +188,7 @@ int	test_bonus(int argc, char **argv)
 		else
 			flag += printf("FT_LSTDELONE \x1b[31mKO\x1b[0m\n");
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstclear") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstclear") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -210,7 +210,7 @@ int	test_bonus(int argc, char **argv)
 		else
 			flag += printf("FT_LSTCLEAR \x1b[31mKO\x1b[0m\n");
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstiter") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstiter") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{
@@ -234,7 +234,7 @@ int	test_bonus(int argc, char **argv)
 			flag += printf("FT_LSTITER \x1b[31mKO\x1b[0m\n");
 		ft_lstclear(&res, &zero_auxiliar);
 	}
-	if (!strcmp(argv[argc - 1], "ft_lstmap") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	if (!strcmp(argv[argc - 1], "lstmap") || !strcmp(argv[1], "bonus") || !strcmp(argv[1], "all"))
 	{
 		if (!flag)
 		{

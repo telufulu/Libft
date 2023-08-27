@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/27 13:46:12 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/27 14:54:34 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ int	test_part2(int argc, char **argv)
 
 		// Sólo debe fallar en caso de que s = 0
 		char	*res = 0;
-		char	s[] = "lorem ipsum dolor sit amet";
-		char	*expected_res = " ipsum dol"; // probar con Mundo!(6) \0(11)
-		int		start = 5; // con "Hola Mundo!" y len de 12 debe devolver null
-		int		len = 10;
+		char	s[] = "jjhola";
+		char	*expected_res = "hola"; // probar con Mundo!(6) \0(11)
+		int		start = 2; // con "Hola Mundo!" y len de 12 debe devolver null
+		int		len = 4;
 
 		res = ft_substr(s, start, len);
 		printf("res: %s\n", res);
-		if ((res == NULL && expected_res == NULL) || !strcmp(res, expected_res))
+		if ((!strcmp(res, "") && !strcmp(expected_res, "")) || (res == NULL && expected_res == NULL) || !strcmp(res, expected_res))
 			printf("FT_SUBSTR \x1b[32mOK\x1b[0m\n");
 		else
 			flag += printf("FT_SUBSTR \x1b[31mKO\x1b[0m\n");

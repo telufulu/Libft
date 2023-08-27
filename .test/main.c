@@ -6,17 +6,12 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 22:12:54 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/27 15:20:09 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
-int	test_part1(int argc, char **argv);
-int	test_part2(int argc, char **argv);
-int	test_bonus(int argc, char **argv);
+#include "test.h"
 
 int	main(int argc, char **argv)
 {
