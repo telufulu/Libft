@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 21:50:05 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/27 13:46:12 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	test_part2(int argc, char **argv)
 	int	flag;
 
 	flag = 0;
-	if (!strcmp(argv[argc - 1], "ft_substr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "substr") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -57,7 +57,7 @@ int	test_part2(int argc, char **argv)
 			flag += printf("FT_SUBSTR \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_strjoin") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "strjoin") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -81,7 +81,7 @@ int	test_part2(int argc, char **argv)
 			flag += printf("FT_STRJOIN \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_strtrim") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "strtrim") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -105,7 +105,7 @@ int	test_part2(int argc, char **argv)
 			flag += printf("FT_STRTRIM \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_split") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "split") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -118,10 +118,11 @@ int	test_part2(int argc, char **argv)
 		//char	s[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
 		//char	s[] = "Hola Mundo Que Tal Estás ?";
 		//char	s[] = "               ";
-		char	s[] = "--1-2--3---4----5-----42";
-		char	c = '-';
-		char	*expt_res[] = {"1", "2", "3", "4", "5", "42", NULL};
-		//char	*expt_res[] = {NULL};
+		//char	s[] = "--1-2--3---4----5-----42";
+		char	s[] = " hello!                          ";
+		char	c = ' ';
+		//char	*expt_res[] = {"1", "2", "3", "4", "5", "42", NULL};
+		char	*expt_res[] = {"hello!", NULL};
 		//char	*expt_res[] = {"lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.", "Sed", "non", "risus.", "Suspendisse"};
 		//char	*expt_res[] = {"Hola", "Mundo","Que","Tal","Estás", "?"};
 
@@ -141,7 +142,7 @@ int	test_part2(int argc, char **argv)
 			printf("FT_SPLIT \x1b[32mOK\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_itoa") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "itoa") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -161,7 +162,7 @@ int	test_part2(int argc, char **argv)
 			flag += printf("FT_ITOA \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_strmapi") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "strmapi") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -181,7 +182,7 @@ int	test_part2(int argc, char **argv)
 			flag += printf("FT_STRMAPI \x1b[31mKO\x1b[0m\n");
 		free(res);
 	}
-	if (!strcmp(argv[argc - 1], "ft_striteri") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "striteri") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -199,7 +200,7 @@ int	test_part2(int argc, char **argv)
 		else
 			flag += printf("FT_STRITERI \x1b[31mKO\x1b[0m\n");
 	}
-	if (!strcmp(argv[argc - 1], "ft_putchar_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "putchar_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -226,7 +227,7 @@ int	test_part2(int argc, char **argv)
 		close(fd);
 		system("rm srcs/test1.txt");
 	}
-	if (!strcmp(argv[argc - 1], "ft_putstr_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "putstr_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -253,7 +254,7 @@ int	test_part2(int argc, char **argv)
 		close(fd);
 		system("rm srcs/test2.txt");
 	}
-	if (!strcmp(argv[argc - 1], "ft_putendl_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "putendl_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -280,7 +281,7 @@ int	test_part2(int argc, char **argv)
 		close(fd);
 		system("rm srcs/test3.txt");
 	}
-	if (!strcmp(argv[argc - 1], "ft_putnbr_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
+	if (!strcmp(argv[argc - 1], "putnbr_fd") || !strcmp(argv[argc - 1],"all") || !strcmp(argv[1], "part2"))
 	{
 		if (!flag)
 		{
@@ -303,6 +304,7 @@ int	test_part2(int argc, char **argv)
 		if (!strcmp(res, expt_res))
 			printf("FT_PUTENDL_FD \x1b[32mOK\x1b[0m\n");
 		else
+
 			flag += printf("FT_PUTENDL_FD \x1b[31mKO\x1b[0m\n");
 		close(fd);
 		system("rm srcs/test3.txt");
