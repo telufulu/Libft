@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/21 16:45:46 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/08/21 17:42:16 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,31 @@ static void	zero_auxiliar(void *s)
 	aux = s;
 	while (*aux != '\0')
 		*aux++ = 0;
+}
+
+static void	str_auxiliar(void *s)
+{
+	char	*aux;
+
+	aux = s;
+	while (*aux != '\0')
+	{
+		*aux = ft_tolower(*aux);
+		aux++;
+	}
+}
+
+static void	*str_auxiliar2(void *s)
+{
+	char	*aux;
+
+	aux = s;
+	while (*aux != '\0')
+	{
+		*aux = ft_tolower(*aux);
+		aux++;
+	}
+	return (s);
 }
 
 int	test_bonus(int argc, char **argv)
@@ -184,6 +209,55 @@ int	test_bonus(int argc, char **argv)
 			printf("FT_LSTCLEAR \x1b[32mOK\x1b[0m\n");
 		else
 			flag += printf("FT_LSTCLEAR \x1b[31mKO\x1b[0m\n");
+	}
+	if (!strcmp(argv[argc - 1], "ft_lstiter") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	{
+		if (!flag)
+		{
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
+			flag = 1;
+		}
+		
+		t_list	*res;
+		t_list	*aux;
+		char	content[] = "After all this time?";
+		char	content2[] = "AlWayS";
+		char	resu[] = "always";
+
+		res = ft_lstnew(content);
+		aux = ft_lstnew(content2);
+		ft_lstadd_back(&res, aux);
+		ft_lstiter(res, &str_auxiliar);
+		if (!strcmp(aux->content, resu) && !aux->next)
+			printf("FT_LSTITER \x1b[32mOK\x1b[0m\n");
+		else
+			flag += printf("FT_LSTITER \x1b[31mKO\x1b[0m\n");
+		ft_lstclear(&res, &zero_auxiliar);
+	}
+	if (!strcmp(argv[argc - 1], "ft_lstmap") || !strcmp(argv[argc - 1], "all") || !strcmp(argv[1], "bonus"))
+	{
+		if (!flag)
+		{
+			printf("\x1b[36m-------------Bonus--------------\x1b[0m\n");
+			flag = 1;
+		}
+		
+		t_list	*res;
+		t_list	*aux;
+		char	content[] = "After all this time?";
+		char	content2[] = "AlWayS";
+		char	resu[] = "always";
+
+		res = ft_lstnew(content);
+		aux = ft_lstnew(content2);
+		ft_lstadd_back(&res, aux);
+		aux = res;
+		res = ft_lstmap(res, &str_auxiliar2, &zero_auxiliar);
+		if (!strcmp((res->next)->content, resu) && !(res->next)->next)
+			printf("FT_LSTMAP \x1b[32mOK\x1b[0m\n");
+		else
+			flag += printf("FT_LSTMAP \x1b[31mKO\x1b[0m\n");
+		ft_lstclear(&res, &zero_auxiliar);
 	}
 	return (flag);
 }

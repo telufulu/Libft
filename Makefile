@@ -16,27 +16,26 @@ OBJS_FILES			=	$(SRCS:%.c=%.o)
 SRCS_BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 						ft_lstsize_bonus.c ft_lstlast_bonus.c \
 						ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-						ft_lstclear_bonus.c
+						ft_lstclear_bonus.c ft_lstiter_bonus.c \
+						ft_lstmap_bonus.c
 OBJS_BONUS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES_BONUS))
 OBJS_FILES_BONUS	=	$(SRCS_BONUS:%.c=%.o)
 OBJS_DIR			=	objs/
 
 all:	$(NAME)
 
-$(NAME): $(OBJS_DIR) $(OBJS)
+$(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 bonus:	$(NAME) $(OBJS_BONUS)
 	ar rcs $(NAME) $(OBJS_BONUS)
 
-$(OBJS_DIR):
-	if [ ! -d $(OBJS_DIR) ]; then mkdir -p $(OBJS_DIR); fi
-
 $(OBJS_DIR)%.o: %.c
+	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -r $(OBJS_DIR)
+	rm -rf $(OBJS_DIR)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
 
