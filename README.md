@@ -1,4 +1,4 @@
-<img src="final_score.png" width="100%" />
+<img src=".final_score.png" width="100%" />
 
 ### 42 Madrid project: libft
 
