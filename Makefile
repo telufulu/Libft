@@ -29,20 +29,21 @@ all:	$(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+	echo "\033[1;34m\n------------\n| Done! 👌 |\n------------\n\033[0m"
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
-	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
+	@[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS_DIR)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
-
+	echo "\033[1;34m\n------------\n|  clean   |\n| Done! 👌 |\n------------\n\033[0m"
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.SILENT: all $(NAME) $(OBJS) $(OBJS_BONUS) re clean fclean
+.SILENT: all $(NAME) re clean fclean
 .PHONY: all bonus clean fclean re

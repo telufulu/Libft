@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 22:45:23 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/22 16:47:19 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:20:55 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	*del(char **s)
 
 char	*get_next_line(int fd)
 {
-	static char	*store;
+	static char	*store[MAX_FD];
 	char		*res;
 	int			aux;
 
@@ -84,15 +84,15 @@ char	*get_next_line(int fd)
 	aux = 0;
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
-	if (!store || (*store && !ft_strchr(store, '\n')))
-		aux = get_buffer(fd, &store);
-	if (aux < 0 || !store)
-		return (del(&store));
-	if (store && *store)
-		res = get_line(&store);
+	if (!store[fd] || (*store[fd] && !ft_strchr(store[fd], '\n')))
+		aux = get_buffer(fd, &store[fd]);
+	if (aux < 0 || !store[fd])
+		return (del(&store[fd]));
+	if (store[fd] && *store[fd])
+		res = get_line(&store[fd]);
 	if (!res)
-		return (del(&store));
-	if (store && !*store)
-		del(&store);
+		return (del(&store[fd]));
+	if (store[fd] && !*store[fd])
+		del(&store[fd]);
 	return (res);
 }
