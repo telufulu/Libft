@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 22:44:41 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:46:41 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 16
+# endif
+
+# define MAX_FD 1024
 
 // Part 1 functions
 int		ft_isalpha(int c);
@@ -72,6 +78,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // Additional functions
+char	*get_next_line(int fd);
 char	**ft_free_split(char **res, int i);
 void	ft_error(void);
 size_t	ft_putnbr_base(int nb, char *base);
