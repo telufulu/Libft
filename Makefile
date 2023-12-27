@@ -25,25 +25,43 @@ OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES			=	$(SRCS_FILES:%.c=%.o)
 OBJS_DIR			=	objs/
 
+# Colors
+
+BOLD_PURPLE	=	\033[1;35m
+BOLD_CYAN	=	\033[1;36m
+BOLD_YELLOW	=	\033[1;33m
+NO_COLOR	=	\033[0m
+DEF_COLOR 	= \033[0;39m
+GRAY 		= \033[0;90m
+RED 		= \033[0;91m
+GREEN		= \033[0;92m
+YELLOW 		= \033[0;93m
+BLUE 		= \033[0;94m
+MAGENTA 	= \033[0;95m
+CYAN 		= \033[0;96m
+WHITE		= \033[0;97m
+
 all:	$(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-	echo "\033[1;34m\n------------\n| Done! 👌 |\n------------\n\033[0m"
+	echo "$(GREEN)\nlibft.a compiled!$(DEF_COLOR)"
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
-	@[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
+	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
+	printf "\r$(GRAY)$(CC) $(CFLAGS) -c $< -o $@$(DEF_COLOR)"
 
 clean:
 	rm -rf $(OBJS_DIR)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
-	echo "\033[1;34m\n------------\n|  clean   |\n| Done! 👌 |\n------------\n\033[0m"
+	echo "\nlibft$(YELLOW) cleaned$(DEF_COLOR)"
+
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.SILENT: all $(NAME) re clean fclean
+.SILENT: all $(NAME) re clean fclean $(OBJS) $(OBJS_DIR)
 .PHONY: all bonus clean fclean re
