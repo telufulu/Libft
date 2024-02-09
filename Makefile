@@ -49,8 +49,8 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-	printf "\r$(GRAY)$(CC) $(CFLAGS) -c $< -o $@$(DEF_COLOR)"
+	$(CC) $(CFLAGS) -c $< -o $PRINTF "\33[2K\r$(GRAY)$(CC) $(CFLAGS) -c $< -o $@$(DEF_COLOR)"
+	printf "\33[2K\r$(GRAY)$(CC) $(CFLAGS) -c $< -o $@$(DEF_COLOR)"
 
 clean:
 	rm -rf $(OBJS_DIR)
