@@ -18,7 +18,7 @@ SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 						$(ADD_FUNCT)
 ADD_FUNCT			=	ft_free_split.c ft_error.c ft_putnbr_base.c \
-						ft_str_digit.c get_next_line.c
+						ft_str_digit.c get_next_line.c concatenate.c
 SRCS_DIR			=	srcs/
 
 OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
@@ -49,7 +49,7 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
-	$(CC) $(CFLAGS) -c $< -o $PRINTF "\33[2K\r$(GRAY)$(CC) $(CFLAGS) -c $< -o $@$(DEF_COLOR)"
+	$(CC) $(CFLAGS) -c $< -o $@
 	printf "\33[2K\r$(GRAY)$(CC) $(CFLAGS) -c $< -o $@$(DEF_COLOR)"
 
 clean:
