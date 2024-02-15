@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/27 20:10:10 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/02/15 20:44:20 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # endif
 
 # define MAX_FD 1024
+# define DEC_BASE "0123456789"
+# define OCT_BASE "01234567"
+# define HEX_BASE "0123456789abcdef"
 
 // Part 1 functions
 int		ft_isalpha(int c);
@@ -83,4 +86,5 @@ char	**ft_free_split(char **res, int i);
 void	ft_error(char *err);
 size_t	ft_putnbr_base(int nb, char *base);
 int		ft_str_digit(char *s);
+char	*concatenate(char *s1, char *s2);
 #endif
