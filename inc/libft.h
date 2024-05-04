@@ -6,32 +6,34 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/02/15 21:07:43 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/05/04 22:36:46 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*******************************************************************************
+ * Includes
+ ******************************************************************************/
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
-/*
+/*******************************************************************************
  * Defines
- */
-
+ ******************************************************************************/
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 16
 # endif
-
 # define MAX_FD 1024
 # define DEC_BASE "0123456789"
 # define OCT_BASE "01234567"
 # define HEX_BASE "0123456789abcdef"
 
-/*
+/*******************************************************************************
  * Term colors
- */
+ ******************************************************************************/
 # define RED "\033[0;31m"
 # define GREEN "\033[0;32m"
 # define YELLOW "\033[0;33m"
@@ -40,6 +42,9 @@
 # define CYAN "\033[0;36m"
 # define DEFAULT "\033[0m"
 
+/*******************************************************************************
+ * Basic functions
+ ******************************************************************************/
 // Part 1 functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -78,7 +83,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-// Lists
+// Bonus
 typedef struct s_list
 {
 	void			*content;
@@ -95,8 +100,34 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-// Additional functions
+/*******************************************************************************
+ * Addicional functions
+ ******************************************************************************/
+// Printf
+typedef struct	s_store
+{
+	char	conv;
+	size_t	(*funct)(va_list);
+}				t_store;
+
+int	ft_printf(char const *s, ...);
+size_t	conv_char(va_list arg);
+size_t	conv_string(va_list arg);
+size_t	conv_addrss(va_list arg);
+size_t	conv_dec(va_list arg);
+size_t	conv_unsig(va_list arg);
+size_t	conv_hex(va_list arg);
+size_t	conv_heX(va_list arg);
+void	ft_bzero(void *s, size_t n);
+size_t	ft_strlen(const char *s);
+size_t	ft_putnbr_base(int nb, char *base);
+size_t	ft_putptr(unsigned long long nb, char *base);
+size_t	ft_putunsig(unsigned int nb);
+
+// GNL
 char	*get_next_line(int fd);
+
+// Custom
 char	**ft_free_split(char **res, int i);
 void	ft_error(char *err);
 size_t	ft_putnbr_base(int nb, char *base);

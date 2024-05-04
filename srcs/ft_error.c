@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:00:42 by telufulu          #+#    #+#             */
-/*   Updated: 2024/02/10 17:48:03 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/05/04 22:45:34 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	ft_error(char *err)
 {
-	ft_putstr_fd("\x1b[31mError\x1b[0m: ", 2);
+	ft_putstr_fd(RED, 2);
+	ft_putstr_fd("Error: ", 2);
+	ft_putstr_fd(DEFAULT, 2);
 	if (err && *err)
 	{
 		ft_putstr_fd(err, 2);
-		write(2, "\n", 1);
+		ft_putstr_fd("\n", 2);
 	}
 	exit(EXIT_FAILURE);
 }
