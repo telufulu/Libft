@@ -6,16 +6,15 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 23:36:03 by telufulu          #+#    #+#             */
-/*   Updated: 2024/02/10 00:08:57 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/06/03 21:05:11 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // This function, concatenates two strings making enough space for them with
-// malloc. s1 is preallocated and s2 is not allocated. The function frees s1
-// and return the mix of s1 and s2.
-// If malloc failes, it returns NULL and frees s1.
+// malloc. s1 is preallocated and s2 is not allocated. The functiond return 
+// the mix of s1 and s2.
 
 char	*concatenate(char *s1, char *s2)
 {
@@ -30,6 +29,5 @@ char	*concatenate(char *s1, char *s2)
 		if (!res)
 			return (NULL);
 	}
-	free(s1);
 	return (res);
 }
