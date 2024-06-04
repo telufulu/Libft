@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/05/04 22:36:46 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/06/04 21:20:26 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,5 @@ void	ft_error(char *err);
 size_t	ft_putnbr_base(int nb, char *base);
 int		ft_str_digit(char *s);
 char	*concatenate(char *s1, char *s2);
+size_t	matrix_len(char **matrix);
 #endif
