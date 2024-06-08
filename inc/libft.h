@@ -133,5 +133,5 @@ void	ft_error(char *err);
 size_t	ft_putnbr_base(int nb, char *base);
 int		ft_str_digit(char *s);
 char	*concatenate(char *s1, char *s2);
-size_t	matrix_len(char **matrix);
+size_t	matrix_len(const char **matrix);
 #endif
