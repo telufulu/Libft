@@ -14,8 +14,11 @@
 
 char	**ft_free_split(char **res, int i)
 {
-	while (i--)
-		free(res[i]);
-	free(res);
+	if (res)
+	{
+		while (i--)
+			free(res[i]);
+		free(res);
+	}
 	return (NULL);
 }

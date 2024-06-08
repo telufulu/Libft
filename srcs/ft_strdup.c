@@ -21,7 +21,10 @@ char	*ft_strdup(const char *s1)
 	res = ft_calloc(sizeof(char), (ft_strlen(s1) + 1));
 	if (!res)
 		return (0);
-	while (*s1 != '\0')
-		res[i++] = (char)*s1++;
+	while (s1 && s1[i] != '\0')
+	{
+		res[i] = s1[i];
+		++i;
+	}
 	return (res);
 }
