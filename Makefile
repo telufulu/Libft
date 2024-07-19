@@ -3,6 +3,7 @@ CC					=	cc
 INC					=	inc/
 CFLAGS				=	-Wall -Werror -Wextra -I $(INC)
 SRCS				=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
+SRCS_DIR			=	srcs/
 SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 					ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
 					ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
@@ -15,12 +16,11 @@ SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 					ft_lstnew.c ft_lstadd_front.c \
 					ft_lstsize.c ft_lstlast.c \
 					ft_lstadd_back.c ft_lstdelone.c \
-					ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-SRCS_DIR			=	srcs/
+					ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
-OBJS_FILES			=	$(SRCS_FILES:%.c=%.o)
 OBJS_DIR			=	objs/
+OBJS_FILES			=	$(SRCS_FILES:%.c=%.o)
 
 # Colors
 
