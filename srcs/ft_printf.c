@@ -27,7 +27,7 @@ static void	init_store(t_store *store)
 int	ft_printf(char const *s, ...)
 {
 	va_list	arg;
-	size_t	nb_chars;
+	int	nb_chars;
 	t_store	store[NB_OF_CONV + 1];
 	int		i;
 
