@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/08/14 17:13:17 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:18:34 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ typedef struct	s_store
 {
 	char	conv;
 	size_t	(*funct)(va_list);
-}				t_store;
+}		t_store;
 
 int	ft_printf(char const *s, ...);
 size_t	conv_char(va_list arg);
