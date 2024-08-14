@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:34:10 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/22 19:26:40 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:30:11 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	len = count * size;
 	aux = malloc(len);
 	if (!aux)
-		return (0);
+		return (NULL);
 	ft_bzero(aux, len);
 	return (aux);
 }
