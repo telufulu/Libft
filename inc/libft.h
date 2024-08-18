@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/08/15 14:46:06 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/08/18 20:05:21 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,6 @@ char	**ft_free_split(char **res, int i);
 void	ft_error(char *err);
 size_t	ft_putnbr_base(int nb, char *base);
 int	ft_str_digit(char *s);
-char	*concatenate(char *s1, char *s2);
 size_t	matrix_len(char **matrix);
 void	print_matrix(char **matrix, int fd);
 #endif
