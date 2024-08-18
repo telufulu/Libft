@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_free_matrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 21:57:38 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 21:58:02 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/08/18 21:10:29 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_free_split(char **res, int i)
+void	**ft_free_split(void **matrix, int i)
 {
-	if (res)
+	if (matrix)
 	{
 		while (i--)
-			free(res[i]);
-		free(res);
+			free(matrix[i]);
+		free(matrix);
 	}
 	return (NULL);
 }

@@ -17,7 +17,7 @@ SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 					ft_lstadd_back.c ft_lstdelone.c \
 					ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 					$(PRINTF) $(ADD_FUNCT)
-ADD_FUNCT			=	ft_free_split.c ft_error.c ft_putnbr_base.c \
+ADD_FUNCT			=	ft_free_matrix.c ft_error.c ft_putnbr_base.c \
 					ft_str_digit.c get_next_line.c \
 					matrix_len.c print_matrix.c
 PRINTF				=	printf_utils.c ft_printf.c more_printf_utils.c

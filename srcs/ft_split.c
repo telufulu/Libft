@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:31:57 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 22:00:04 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/08/18 21:13:01 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 		len_word = next_word(&s, c);
 		res[i] = ft_calloc(sizeof(char), len_word + 1);
 		if (!res[i])
-			return (ft_free_split(res, i));
+			return ((char **)ft_free_matrix((void **)res, i));
 		ft_strlcpy(res[i++], s, len_word + 1);
 		s += len_word;
 	}
