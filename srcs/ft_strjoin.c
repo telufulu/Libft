@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 14:33:49 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/22 19:25:56 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/01 17:44:47 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	x = 0;
+	if (!s1)
+		return (ft_strdup(s2));
 	res = ft_calloc(sizeof(char), ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!res)
 		return (NULL);

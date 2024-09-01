@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_len.c                                       :+:      :+:    :+:   */
+/*   ft_print_matrix.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 21:18:45 by telufulu          #+#    #+#             */
-/*   Updated: 2024/06/04 21:19:42 by telufulu         ###   ########.fr       */
+/*   Created: 2024/08/15 14:43:44 by telufulu          #+#    #+#             */
+/*   Updated: 2024/09/01 17:48:18 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	matrix_len(char **matrix)
+void	ft_print_matrix(char **matrix, int fd)
 {
-	size_t	len;
-
-	len = 0;
-	while (matrix[len])
-		++len;
-	return (len);
+	while (matrix && *matrix)
+	{
+		ft_putstr_fd(*matrix, fd);
+		write(1, "\n", 1);
+		matrix++;
+	}
 }
