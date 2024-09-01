@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 21:57:38 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/01 17:59:58 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/01 21:25:13 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ void	**ft_free_matrix(void **matrix)
 		matrix[i] = NULL;
 	}
 	if (matrix)
-	{
 		free(matrix);
-		matrix = NULL;
-	}
 	return (NULL);
 }
