@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/01 17:57:22 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/01 18:27:04 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,6 @@ size_t	ft_putnbr_base(int nb, char *base);
 int		ft_str_digit(char *s);
 size_t	ft_matrix_len(char **matrix);
 void	ft_print_matrix(char **matrix, int fd);
+void	*ft_realloc(void *ptr, size_t size);
+
 #endif
