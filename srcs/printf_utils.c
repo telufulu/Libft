@@ -38,8 +38,8 @@ size_t	conv_string(va_list arg)
 
 size_t	conv_addrss(va_list arg)
 {
-	unsigned long int	i;
-	unsigned long int	x;
+	long long int	i;
+	long long int	x;
 	unsigned long int	p;
 
 	i = 0;
