@@ -38,8 +38,8 @@ size_t	conv_string(va_list arg)
 
 size_t	conv_addrss(va_list arg)
 {
-	size_t				i;
-	size_t				x;
+	unsigned long int	i;
+	unsigned long int	x;
 	unsigned long int	p;
 
 	i = 0;
@@ -51,7 +51,7 @@ size_t	conv_addrss(va_list arg)
 	x = ft_putptr(p, "0123456789abcdef");
 	if (x < 0)
 		return (x);
-	return (i + x);
+	return ((size_t)(i + x));
 }
 
 size_t	conv_dec(va_list arg)
