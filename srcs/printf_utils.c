@@ -43,7 +43,6 @@ size_t	conv_addrss(va_list arg)
 	unsigned long int	p;
 
 	i = 0;
-	//p = va_arg(arg, unsigned long long);
 	p = va_arg(arg, unsigned long long);
 	i = write(1, "0x", 2);
 	if (i < 0)
