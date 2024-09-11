@@ -6,11 +6,31 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 22:24:13 by telufulu          #+#    #+#             */
-/*   Updated: 2024/05/04 22:25:57 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/11 22:53:33 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	conv_hex(va_list arg)
+{
+	size_t	i;
+	int		d;
+
+	d = va_arg(arg, int);
+	i = ft_putnbr_base(d, "0123456789abcdef");
+	return (i);
+}
+
+size_t	conv_heupx(va_list arg)
+{
+	size_t	i;
+	int		d;
+
+	d = va_arg(arg, int);
+	i = ft_putnbr_base(d, "0123456789ABCDEF");
+	return (i);
+}
 
 size_t	ft_putunsig(unsigned int nb)
 {
@@ -40,4 +60,11 @@ size_t	ft_putptr(unsigned long long nb, char *base)
 	aux = (nb % bs);
 	nb_chars += write(1, &base[aux], 1);
 	return (nb_chars);
+}
+
+size_t	conv_perc(va_list arg)
+{
+	if (arg)
+		return (write(1, "%", 1));
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/01 20:48:25 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/11 22:53:45 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,20 +104,21 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * Addicional functions
  ******************************************************************************/
 // Printf
-typedef struct	s_store
+typedef struct s_store
 {
 	char	conv;
 	size_t	(*funct)(va_list);
 }				t_store;
 
-int	ft_printf(char const *s, ...);
+int		ft_printf(char const *s, ...);
 size_t	conv_char(va_list arg);
 size_t	conv_string(va_list arg);
 size_t	conv_addrss(va_list arg);
 size_t	conv_dec(va_list arg);
 size_t	conv_unsig(va_list arg);
 size_t	conv_hex(va_list arg);
-size_t	conv_heX(va_list arg);
+size_t	conv_heupx(va_list arg);
+size_t	conv_perc(va_list arg);
 void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_putnbr_base(int nb, char *base);

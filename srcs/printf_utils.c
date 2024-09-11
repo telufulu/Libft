@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:42:16 by telufulu          #+#    #+#             */
-/*   Updated: 2024/05/04 22:35:12 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/11 22:25:53 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ size_t	conv_char(va_list arg)
 {
 	int		c;
 	size_t	i;
-	
-	c = va_arg(arg, int); //coge el siguiente argumento, aunque no coincida con el tipo de variable dado.
+
+	c = va_arg(arg, int);
 	i = write(1, &c, 1);
 	return (i);
 }
@@ -38,8 +38,8 @@ size_t	conv_string(va_list arg)
 
 size_t	conv_addrss(va_list arg)
 {
-	long long int	i;
-	long long int	x;
+	long long int		i;
+	long long int		x;
 	unsigned long int	p;
 
 	i = 0;
@@ -70,25 +70,5 @@ size_t	conv_unsig(va_list arg)
 
 	d = va_arg(arg, unsigned int);
 	i = ft_putunsig(d);
-	return (i);
-}
-
-size_t	conv_hex(va_list arg)
-{
-	size_t	i;
-	int		d;
-
-	d = va_arg(arg, int);
-	i = ft_putnbr_base(d, "0123456789abcdef");
-	return (i);
-}
-
-size_t	conv_heX(va_list arg)
-{
-	size_t	i;
-	int		d;
-
-	d = va_arg(arg, int);
-	i = ft_putnbr_base(d, "0123456789ABCDEF");
 	return (i);
 }

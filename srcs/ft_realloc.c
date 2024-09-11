@@ -6,7 +6,7 @@
 /*   By: telufulu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:15:45 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/01 18:37:38 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/11 22:52:14 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 // to by ptr as will fit to the new allocation, frees the old allocation, and 
 // returns a pointer to the allocated memory.
 //
-// If ptr is NULL, ft_realloc is identical to a call to ft_malloc for size bytes.
-// 
+// If ptr is NULL, ft_realloc is identical to a call to ft_malloc for size bytes
+//
 // If size is zero and ptr is not NULL, a new, minimum sized object is allocated
 // and the original object is freed.
 
