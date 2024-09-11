@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/11 22:53:45 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/09/12 01:38:32 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@
 # define DEC_BASE "0123456789"
 # define OCT_BASE "01234567"
 # define HEX_BASE "0123456789abcdef"
+
+typedef char t_bool;
+# define true 1
+# define false 0
 
 /*******************************************************************************
  * Term colors
