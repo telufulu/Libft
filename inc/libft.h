@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/12 01:38:32 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/10/13 18:38:16 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,6 @@ size_t	conv_unsig(va_list arg);
 size_t	conv_hex(va_list arg);
 size_t	conv_heupx(va_list arg);
 size_t	conv_perc(va_list arg);
-void	ft_bzero(void *s, size_t n);
-size_t	ft_strlen(const char *s);
-size_t	ft_putnbr_base(int nb, char *base);
 size_t	ft_putptr(unsigned long long nb, char *base);
 size_t	ft_putunsig(unsigned int nb);
 
@@ -140,5 +137,6 @@ int		ft_str_digit(char *s);
 size_t	ft_matrix_len(char **matrix);
 void	ft_print_matrix(char **matrix, int fd);
 void	*ft_realloc(void *ptr, size_t size);
+char	**ft_new_matrix_str(char **matrix, char *node);
 
 #endif
