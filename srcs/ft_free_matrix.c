@@ -6,15 +6,13 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 21:57:38 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/01 21:25:13 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/11/02 00:13:33 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// It's necesary to cast the variable matrix at the call of the function.
-
-void	**ft_free_matrix(void **matrix)
+char	**ft_free_matrix(char **matrix)
 {
 	int	i;
 

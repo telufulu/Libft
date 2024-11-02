@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/10/13 23:20:20 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/11/02 00:44:00 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,13 +130,15 @@ size_t	ft_putunsig(unsigned int nb);
 char	*get_next_line(int fd);
 
 // Custom
-void	**ft_free_matrix(void **matrix);
+char	**ft_free_matrix(char **matrix);
 void	ft_error(char *err, char *str_error);
 size_t	ft_putnbr_base(int nb, char *base);
 int		ft_str_digit(char *s);
 size_t	ft_matrix_len(char **matrix);
 void	ft_print_matrix(char **matrix, int fd);
 void	*ft_realloc(void *ptr, size_t size);
-char	**ft_new_matrix_str(char **matrix, char *node);
+char	**ft_matrixjoin(char **matrix, char *node);
+char	**ft_matrixdup(char **org, size_t len);
+char	**ft_matrixcpy(char **org, char **new, size_t len);
 
 #endif
