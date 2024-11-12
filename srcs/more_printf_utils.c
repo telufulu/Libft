@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 22:24:13 by telufulu          #+#    #+#             */
-/*   Updated: 2024/09/11 22:53:33 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/11/12 20:17:36 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ size_t	ft_putptr(unsigned long long nb, char *base)
 
 size_t	conv_perc(va_list arg)
 {
-	if (arg)
-		return (write(1, "%", 1));
-	return (0);
+	(void)arg;
+	return (write(1, "%", 1));
 }
