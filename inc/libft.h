@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2024/11/02 00:44:00 by telufulu         ###   ########.fr       */
+/*   Updated: 2024/11/12 20:20:32 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,5 +140,6 @@ void	*ft_realloc(void *ptr, size_t size);
 char	**ft_matrixjoin(char **matrix, char *node);
 char	**ft_matrixdup(char **org, size_t len);
 char	**ft_matrixcpy(char **org, char **new, size_t len);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
