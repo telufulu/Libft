@@ -130,16 +130,17 @@ size_t	ft_putunsig(unsigned int nb);
 char	*get_next_line(int fd);
 
 // Custom
-char	**ft_free_matrix(char **matrix);
-void	ft_error(char *err, char *str_error);
-size_t	ft_putnbr_base(int nb, char *base);
-int		ft_str_digit(char *s);
-size_t	ft_matrix_len(char **matrix);
-void	ft_print_matrix(char **matrix, int fd);
-void	*ft_realloc(void *ptr, size_t size);
-char	**ft_matrixjoin(char **matrix, char *node);
-char	**ft_matrixdup(char **org, size_t len);
-char	**ft_matrixcpy(char **org, char **new, size_t len);
-int		ft_strcmp(const char *s1, const char *s2);
-
+char    	**ft_free_matrix(char **matrix);
+void    	ft_error(char *err, char *str_error);
+size_t  	ft_putnbr_base(int nb, char *base);
+int	    	ft_str_digit(char *s);
+size_t  	ft_matrix_len(char **matrix);
+void    	ft_print_matrix(char **matrix, int fd);
+void    	*ft_realloc(void *ptr, size_t size);
+char    	**ft_matrixjoin(char **matrix, char *node);
+char    	**ft_matrixdup(char **org, size_t len);
+char    	**ft_matrixcpy(char **org, char **new, size_t len);
+int	    	ft_strcmp(const char *s1, const char *s2);
+long int		ft_atoli(const char *str);
+int         ft_isspace(int c);
 #endif
